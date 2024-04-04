@@ -1,0 +1,12 @@
+## Python specific
+__pycache__
+*.egg-info
+*.pyc
+.venv/*
+
+## generic files to ignore
+*~
+*.lock
+*.DS_Store
+*.swp
+*.out
