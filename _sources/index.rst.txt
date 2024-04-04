@@ -10,6 +10,12 @@ Welcome to jQuery to JavaScript's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   selecting
+   createremove
+   manipulatingdom
+   cssclasses
+   events
+   sources
 
 
 Indices and tables
