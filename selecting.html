@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Creating and Removing DOM elements" href="createremove.html" /><link rel="prev" title="Welcome to jQuery to JavaScript’s documentation!" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Working with CSS classes" href="cssclasses.html" /><link rel="prev" title="Manipulating DOM elements" href="manipulatingdom.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
         <title>Selecting DOM elements - jQuery to JavaScript 0.1 documentation</title>
@@ -156,11 +156,13 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Selecting DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates.html">Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="createremove.html">Creating and Removing DOM elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cssclasses.html">Working with CSS classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General JavaScript syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Selecting DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssclasses.html">Working with CSS classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
 </ul>
 
@@ -209,7 +211,7 @@
       <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;subheading&quot;</span><span class="p">&gt;</span>Sub-example Two<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>One<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Two<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;two&quot;</span><span class="p">&gt;</span>Two<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
         <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Three<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -234,6 +236,9 @@
 
 <span class="c1">// return NodeList of all elements that match the selector</span>
 <span class="kd">let</span><span class="w"> </span><span class="nx">listItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;#content ul li&#39;</span><span class="p">)</span>
+
+<span class="c1">// get all elements except something</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">mostItems</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;#content ul li:not(.two)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -260,23 +265,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="createremove.html">
+          <a class="next-page" href="cssclasses.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Creating and Removing DOM elements</div>
+                <div class="title">Working with CSS classes</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="manipulatingdom.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Manipulating DOM elements</div>
                 
               </div>
             </a>

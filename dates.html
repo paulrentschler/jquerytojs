@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Selecting DOM elements" href="selecting.html" /><link rel="prev" title="General JavaScript syntax" href="general.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Creating and Removing DOM elements" href="createremove.html" /><link rel="prev" title="Welcome to jQuery to JavaScript’s documentation!" href="index.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
-        <title>Manipulating DOM elements - jQuery to JavaScript 0.1 documentation</title>
+        <title>Dates - jQuery to JavaScript 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
@@ -156,11 +156,11 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="dates.html">Dates</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="createremove.html">Creating and Removing DOM elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general.html">General JavaScript syntax</a></li>
-<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Manipulating DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="selecting.html">Selecting DOM elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cssclasses.html">Working with CSS classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
@@ -198,55 +198,30 @@
           </label>
         </div>
         <article role="main">
-          <section id="manipulating-dom-elements">
-<h1>Manipulating DOM elements<a class="headerlink" href="#manipulating-dom-elements" title="Permalink to this heading">#</a></h1>
-<section id="basics">
-<h2>Basics<a class="headerlink" href="#basics" title="Permalink to this heading">#</a></h2>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">div</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+          <section id="dates">
+<h1>Dates<a class="headerlink" href="#dates" title="Permalink to this heading">#</a></h1>
+<section id="get-the-current-date-time">
+<h2>Get the current date/time<a class="headerlink" href="#get-the-current-date-time" title="Permalink to this heading">#</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">now</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">month</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getMonth</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getDate</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getFullYear</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getHours</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">minutes</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getMinutes</span><span class="p">()</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">seconds</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">now</span><span class="p">.</span><span class="nx">getSeconds</span><span class="p">()</span>
 
-<span class="c1">// add text content</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This only allows text, no HTML&#39;</span>
-
-<span class="c1">// add HTML content</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This &lt;b&gt;allows&lt;/b&gt; HTML tags&#39;</span>
-
-<span class="c1">// add CSS class(es)</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">className</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;new block&#39;</span>
-
-<span class="c1">// set/change the ID attribute</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;unique-div&#39;</span>
-
-<span class="c1">// set generic attributes</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s1">&#39;data-type&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;new&#39;</span><span class="p">)</span>
-
-<span class="c1">// set CSS styling</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;#fff&#39;</span>
-<span class="nx">div</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;black&#39;</span>
+<span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Current date/time: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">year</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-&#39;</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="nx">month</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">month</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-&#39;</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="p">((</span><span class="nx">day</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;0&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">day</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39; &#39;</span>
+<span class="w">                            </span><span class="o">+</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">minutes</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;:&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">seconds</span><span class="p">)</span>
 </pre></div>
 </div>
-</section>
-<section id="adding-to-existing-html">
-<h2>Adding to existing HTML<a class="headerlink" href="#adding-to-existing-html" title="Permalink to this heading">#</a></h2>
-<p>Initial HTML</p>
-<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;menu&quot;</span><span class="p">&gt;</span>
-  <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;checkbox&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;one&quot;</span> <span class="p">/&gt;</span>
-  <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
-</pre></div>
-</div>
-<p>The <strong>wrong</strong> way to add to the list item</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">)</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="s1">&#39;&lt;span&gt;First option&lt;/span&gt;&#39;</span>
-</pre></div>
-</div>
-<p>This will remove any event listeners associated with the content of the list item (i.e., an onClick event on the checkbox)</p>
-<p>The <strong>right</strong> way to add to the list item</p>
-<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">window</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;.menu li&#39;</span><span class="p">)</span>
-<span class="kd">let</span><span class="w"> </span><span class="nx">label</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;span&gt;First option&lt;/span&gt;&#39;</span>
-<span class="nx">item</span><span class="p">.</span><span class="nx">insertAdjacentHTML</span><span class="p">(</span><span class="s1">&#39;beforeend&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><cite>.getMonth()</cite> returns a zero-based number</p></li>
+<li><p><cite>.getDate()</cite> returns the day of the month (0-31)</p></li>
+<li><p><cite>.getDay()</cite> returns the day of the week (0-6, 0 == Sunday)</p></li>
+</ul>
 </section>
 </section>
 
@@ -255,23 +230,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="selecting.html">
+          <a class="next-page" href="createremove.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Selecting DOM elements</div>
+                <div class="title">Creating and Removing DOM elements</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="general.html">
+          <a class="prev-page" href="index.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">General JavaScript syntax</div>
+                <div class="title">Home</div>
                 
               </div>
             </a>
@@ -305,9 +280,8 @@
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Manipulating DOM elements</a><ul>
-<li><a class="reference internal" href="#basics">Basics</a></li>
-<li><a class="reference internal" href="#adding-to-existing-html">Adding to existing HTML</a></li>
+<li><a class="reference internal" href="#">Dates</a><ul>
+<li><a class="reference internal" href="#get-the-current-date-time">Get the current date/time</a></li>
 </ul>
 </li>
 </ul>

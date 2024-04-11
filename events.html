@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Sources" href="sources.html" /><link rel="prev" title="Working with CSS classes" href="cssclasses.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="General JavaScript syntax" href="general.html" /><link rel="prev" title="Creating and Removing DOM elements" href="createremove.html" />
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
         <title>Events - jQuery to JavaScript 0.1 documentation</title>
@@ -156,11 +156,13 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="selecting.html">Selecting DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dates.html">Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="createremove.html">Creating and Removing DOM elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cssclasses.html">Working with CSS classes</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General JavaScript syntax</a></li>
+<li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="selecting.html">Selecting DOM elements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cssclasses.html">Working with CSS classes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sources.html">Sources</a></li>
 </ul>
 
@@ -198,6 +200,18 @@
         <article role="main">
           <section id="events">
 <h1>Events<a class="headerlink" href="#events" title="Permalink to this heading">#</a></h1>
+<section id="doing-work-on-page-load">
+<h2>Doing work on page load<a class="headerlink" href="#doing-work-on-page-load" title="Permalink to this heading">#</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;EVERYTHING on the page, including images, is loaded!&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;DOMContentLoaded&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">event</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;DOM contents have been loaded, but not necessarily all the page dependencies&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
 <section id="types-of-events">
 <h2>Types of events<a class="headerlink" href="#types-of-events" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
@@ -214,23 +228,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="sources.html">
+          <a class="next-page" href="general.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Sources</div>
+                <div class="title">General JavaScript syntax</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="cssclasses.html">
+          <a class="prev-page" href="createremove.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Working with CSS classes</div>
+                <div class="title">Creating and Removing DOM elements</div>
                 
               </div>
             </a>
@@ -265,6 +279,7 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Events</a><ul>
+<li><a class="reference internal" href="#doing-work-on-page-load">Doing work on page load</a></li>
 <li><a class="reference internal" href="#types-of-events">Types of events</a></li>
 </ul>
 </li>
