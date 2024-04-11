@@ -14,7 +14,7 @@ Selecting DOM elements
         <h2 class="subheading">Sub-example Two</h2>
         <ul>
           <li>One</li>
-          <li>Two</li>
+          <li class="two">Two</li>
           <li>Three</li>
         </ul>
       </div>
@@ -45,6 +45,9 @@ Generic selector
 
   // return NodeList of all elements that match the selector
   let listItems = document.querySelectorAll('#content ul li')
+
+  // get all elements except something
+  let mostItems = document.querySelectorAll('#content ul li:not(.two)')
 
 
 

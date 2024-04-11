@@ -10,11 +10,13 @@ Welcome to jQuery to JavaScript's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   selecting
+   dates
    createremove
-   manipulatingdom
-   cssclasses
    events
+   general
+   manipulatingdom
+   selecting
+   cssclasses
    sources
 
 
