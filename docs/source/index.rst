@@ -14,6 +14,7 @@ Welcome to jQuery to JavaScript's documentation!
    dates
    createremove
    events
+   forms
    general
    manipulatingdom
    selecting
