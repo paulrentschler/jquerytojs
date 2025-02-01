@@ -1,6 +1,22 @@
 General JavaScript syntax
 =========================
 
+Looping
+-------
+
+forEach
+^^^^^^^
+
+.. code-block:: javascript
+
+  const letters = ['a', 'b', 'c']
+
+  letters.forEach((item) => {
+    console.log(item)
+  })
+
+
+
 Working with numbers
 --------------------
 

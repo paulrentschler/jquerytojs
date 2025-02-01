@@ -7,7 +7,7 @@
 
     <!-- Generated with Sphinx 7.1.2 and Furo 2024.01.29 -->
         <title>Selecting DOM elements - jQuery to JavaScript 0.1 documentation</title>
-      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=36a5483c" />
     
@@ -156,9 +156,11 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="attributes.html">Element attributes</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dates.html">Dates</a></li>
 <li class="toctree-l1"><a class="reference internal" href="createremove.html">Creating and Removing DOM elements</a></li>
 <li class="toctree-l1"><a class="reference internal" href="events.html">Events</a></li>
+<li class="toctree-l1"><a class="reference internal" href="forms.html">Forms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="general.html">General JavaScript syntax</a></li>
 <li class="toctree-l1"><a class="reference internal" href="manipulatingdom.html">Manipulating DOM elements</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Selecting DOM elements</a></li>
@@ -210,9 +212,9 @@
 
       <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;subheading&quot;</span><span class="p">&gt;</span>Sub-example Two<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
       <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>One<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;two&quot;</span><span class="p">&gt;</span>Two<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
-        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>Three<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>One<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;two&quot;</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Two<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;&quot;</span><span class="p">&gt;</span>Three<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
       <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
     <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
   <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -257,6 +259,19 @@
 <span class="kd">let</span><span class="w"> </span><span class="nx">items</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">list</span><span class="p">.</span><span class="nx">querySelectorAll</span><span class="p">(</span><span class="s1">&#39;li&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="getting-parent-s">
+<h2>Getting parent(s)<a class="headerlink" href="#getting-parent-s" title="Permalink to this heading">#</a></h2>
+<div class="highlight-javascript notranslate"><div class="highlight"><pre><span></span><span class="c1">// get the direct parent of an element</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;li.two&#39;</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">parent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">.</span><span class="nx">parentNode</span><span class="w">  </span><span class="c1">// returns the &lt;ul&gt; element</span>
+
+<span class="c1">// finding the first parent that matches a selector</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">item_link</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;li &gt; a&#39;</span><span class="p">)</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item_link</span><span class="p">.</span><span class="nx">closest</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Note:</strong> <code class="docutils literal notranslate"><span class="pre">closest()</span></code> also checks the current element to see if it matches the criteria.</p>
 </section>
 </section>
 
@@ -319,6 +334,7 @@
 <li><a class="reference internal" href="#using-specific-element-attributes">Using specific element attributes</a></li>
 <li><a class="reference internal" href="#generic-selector">Generic selector</a></li>
 <li><a class="reference internal" href="#getting-children">Getting children</a></li>
+<li><a class="reference internal" href="#getting-parent-s">Getting parent(s)</a></li>
 </ul>
 </li>
 </ul>
