@@ -31,7 +31,7 @@ Forms
       <option value="question">I have a question</option>
       <option value="feedback">Provide feedback</option>
       <option value="complain">Complain incessantly</option>
-    </select
+    </select>
 
     <label for="message">Your message</label>
     <textarea id="message" name="message"></textarea>
