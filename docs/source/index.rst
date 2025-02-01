@@ -10,6 +10,7 @@ Welcome to jQuery to JavaScript's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   attributes
    dates
    createremove
    events

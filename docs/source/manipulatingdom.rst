@@ -16,6 +16,7 @@ Basics
 
   // add CSS class(es)
   div.className = 'new block'
+  div.classList.add('new', 'block')
 
   // set/change the ID attribute
   div.id = 'unique-div'
@@ -26,6 +27,13 @@ Basics
   // set CSS styling
   div.style.color = '#fff'
   div.style.backgroundColor = 'black'
+
+
+Additional information
+
+* :doc:attributes
+* :doc:cssclasses
+
 
 
 Adding to existing HTML
