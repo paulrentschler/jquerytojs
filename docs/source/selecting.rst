@@ -13,9 +13,9 @@ Selecting DOM elements
 
         <h2 class="subheading">Sub-example Two</h2>
         <ul>
-          <li>One</li>
-          <li class="two">Two</li>
-          <li>Three</li>
+          <li><a href="">One</a></li>
+          <li class="two"><a href="">Two</a></li>
+          <li><a href="">Three</a></li>
         </ul>
       </div>
     </body>
@@ -67,3 +67,20 @@ Getting children
   // using nested selectors
   let list = document.querySelector('ul')
   let items = list.querySelectorAll('li')
+
+
+
+Getting parent(s)
+-----------------
+
+.. code-block:: javascript
+
+  // get the direct parent of an element
+  let item = document.querySelector('li.two')
+  let parent = item.parentNode  // returns the <ul> element
+
+  // finding the first parent that matches a selector
+  let item_link = document.querySelector('li > a')
+  let list = item_link.closest('ul')
+
+**Note:** ``closest()`` also checks the current element to see if it matches the criteria.
