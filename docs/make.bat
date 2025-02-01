@@ -5,7 +5,7 @@ pushd %~dp0
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=sphinx-build
+	set SPHINXBUILD=C:\projects\jquerytojs\.venv\Scripts\sphinx-build.exe
 )
 set SOURCEDIR=source
 set BUILDDIR=build
@@ -24,6 +24,9 @@ if errorlevel 9009 (
 )
 
 if "%1" == "" goto help
+
+rd /s /q "C:\projects\jquerytojs\docs\build\doctrees"
+rd /s /q "C:\projects\jquerytojs\docs\build\html"
 
 %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS% %O%
 goto end
